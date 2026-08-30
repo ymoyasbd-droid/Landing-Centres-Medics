@@ -296,6 +296,13 @@ function App() {
           <a href="mailto:ymoyasbd@gmail.com" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-primary text-dark font-semibold hover:bg-primary/90 transition-colors mb-12">
             {t.footer_btn} <TrendingUp size={18} />
           </a>
+          
+          <div className="flex justify-center mb-8">
+            <a href="/ausentismo-citas-psicotecnicos.html" className="text-sm text-muted hover:text-primary transition-colors underline underline-offset-4">
+              Blog: Cómo reducir el ausentismo (no-shows) en citas de psicotécnicos
+            </a>
+          </div>
+
           <div className="text-muted text-sm flex flex-col md:flex-row justify-center items-center gap-4">
             <div className="flex items-center gap-2">
               <Bot size={16} /> <span className="font-bold text-white">Sintel IA</span>

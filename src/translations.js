@@ -4,8 +4,8 @@ export const translations = {
     contact: "Contactar",
     hero_tag: "Ecosistema Digital IA",
     hero_title_1: "Solución de IA para",
-    hero_title_2: "Centros Médicos",
-    hero_desc: "Transformando la atención al paciente en un motor de ingresos 24/7.",
+    hero_title_2: "Centros Médicos y Psicotécnicos",
+    hero_desc: "Transformando la atención al paciente y la captación para Centros de Reconocimiento de Conductores (CRC) en un motor de ingresos 24/7.",
     hero_btn_1: "Solicitar Auditoría Gratuita",
     hero_btn_2: "Ver Casos de Éxito",
     reto_title: "El Reto de la Brecha Digital",
@@ -19,7 +19,7 @@ export const translations = {
     sol_title: "Inteligencia Artificial Especializada",
     sol_desc: "Implementamos un ecosistema digital diseñado para la conversión.",
     sol_items: [
-      { title: "Chatbot IA 24/7", desc: "Un recepcionista virtual que indexa toda la base de conocimiento del centro y responde dudas complejas al instante." },
+      { title: "Chatbot IA 24/7", desc: "Un recepcionista virtual que responde dudas complejas y gestiona la cita previa para reconocimientos médicos DGT al instante." },
       { title: "Calculadora de Precios", desc: "Transparencia inmediata que reduce la incertidumbre del usuario y acelera la decisión de compra." },
       { title: "Cita Automatizada", desc: "Captura de leads cualificados de forma fluida, conectando directamente con el sistema de reservas." }
     ],
@@ -27,7 +27,7 @@ export const translations = {
     val_title: "Captación y Fidelización",
     val_desc: "La solución no solo responde preguntas, sino que construye una base de datos de alto valor.",
     val_items: [
-      { title: "Leads de Alta Intención", desc: "Convierte visitas anónimas en citas confirmadas para trámites obligatorios (conducir, armas, náutica)." },
+      { title: "Leads de Alta Intención", desc: "Convierte visitas anónimas en citas previas confirmadas para reconocimientos médicos DGT, armas y náutica." },
       { title: "Alertas de Caducidad", desc: "Registro de fechas de vencimiento para enviar recordatorios automáticos, asegurando la recurrencia." },
       { title: "Optimización de Ads", desc: "Maximiza el ROI de las campañas de Google Ads al dirigir el tráfico directamente a una landing de conversión." }
     ],
@@ -57,7 +57,7 @@ export const translations = {
     ],
     about_tag: "Quiénes Somos",
     about_title: "Liderando la Transformación Digital",
-    about_desc: "Especializados en el diseño e implementación de ecosistemas avanzados de IA para pymes y centros de servicios, optimizando procesos operativos, captación de leads y atención al cliente.",
+    about_desc: "Especializados en software y automatización para centros psicotécnicos DGT y CRC, optimizando la captación de pacientes para renovación del carnet de conducir y atención al cliente.",
     about_box_title: "Hoja de Ruta: Fase Piloto (4-6 semanas)",
     about_box_desc: "Despliegue ágil de landing de conversión, calculadora interactiva y chatbot para WhatsApp integrado con su sistema de citas, evaluado con KPIs estrictos.",
     about_adv: "Ventaja Competitiva",
@@ -70,16 +70,16 @@ export const translations = {
     footer_title: "¿Listo para transformar tu Centro Médico?",
     footer_btn: "Hablemos hoy",
     footer_rights: "Todos los derechos reservados.",
-    seo_title: "Sintel IA Consulting | IA para Centros Médicos",
-    seo_desc: "Especialistas en automatización, chatbots y digitalización para clínicas y centros de reconocimiento médico. Capta leads 24/7."
+    seo_title: "Sintel IA | Automatización e IA para Centros de Reconocimiento DGT (CRC)",
+    seo_desc: "Automatizamos la cita previa, recordatorios y captación 24/7 para Centros de Reconocimiento de Conductores autorizados por la DGT. Multiplica tus renovaciones."
   },
   ca: {
     header_slogan: "Serveis Professionals B2B i B2C en Intel·ligència Artificial",
     contact: "Contactar",
     hero_tag: "Ecosistema Digital IA",
     hero_title_1: "Solució d'IA per a",
-    hero_title_2: "Centres Mèdics",
-    hero_desc: "Transformant l'atenció al pacient en un motor d'ingressos 24/7.",
+    hero_title_2: "Centres Mèdics i Psicotècnics",
+    hero_desc: "Transformant l'atenció al pacient i la captació per a Centres de Reconeixement de Conductors (CRC) en un motor d'ingressos 24/7.",
     hero_btn_1: "Sol·licitar Auditoria Gratuïta",
     hero_btn_2: "Veure Casos d'Èxit",
     reto_title: "El Repte de la Bretxa Digital",
@@ -93,7 +93,7 @@ export const translations = {
     sol_title: "Intel·ligència Artificial Especialitzada",
     sol_desc: "Implementem un ecosistema digital dissenyat per a la conversió.",
     sol_items: [
-      { title: "Xatbot IA 24/7", desc: "Un recepcionista virtual que indexa tota la base de coneixement del centre i respon dubtes complexos a l'instant." },
+      { title: "Xatbot IA 24/7", desc: "Un recepcionista virtual que respon dubtes complexos i gestiona la cita prèvia per a reconeixements mèdics DGT a l'instant." },
       { title: "Calculadora de Preus", desc: "Transparència immediata que redueix la incertesa de l'usuari i accelera la decisió de compra." },
       { title: "Cita Automatitzada", desc: "Captura de leads qualificats de forma fluida, connectant directament amb el sistema de reserves." }
     ],
@@ -101,7 +101,7 @@ export const translations = {
     val_title: "Captació i Fidelització",
     val_desc: "La solució no només respon preguntes, sinó que construeix una base de dades d'alt valor.",
     val_items: [
-      { title: "Leads d'Alta Intenció", desc: "Converteix visites anònimes en cites confirmades per a tràmits obligatoris (conduir, armes, nàutica)." },
+      { title: "Leads d'Alta Intenció", desc: "Converteix visites anònimes en cites prèvies confirmades per a reconeixements mèdics DGT, armes i nàutica." },
       { title: "Alertes de Caducitat", desc: "Registre de dates de venciment per enviar recordatoris automàtics, assegurant la recurrència." },
       { title: "Optimització d'Ads", desc: "Maximitza el ROI de les campanyes de Google Ads al dirigir el trànsit directament a una landing de conversió." }
     ],
@@ -131,7 +131,7 @@ export const translations = {
     ],
     about_tag: "Qui Som",
     about_title: "Liderant la Transformació Digital",
-    about_desc: "Especialitzats en el disseny i implementació d'ecosistemes avançats d'IA per a pimes i centres de serveis, optimitzant processos operatius, captació de leads i atenció al client.",
+    about_desc: "Especialitzats en programari i automatització per a centres psicotècnics DGT i CRC, optimitzant la captació de pacients per a renovació del carnet de conduir i atenció al client.",
     about_box_title: "Full de Ruta: Fase Pilot (4-6 setmanes)",
     about_box_desc: "Desplegament àgil de landing de conversió, calculadora interactiva i xatbot per a WhatsApp integrat amb el seu sistema de cites, avaluat amb KPIs estrictes.",
     about_adv: "Avantatge Competitiu",
@@ -144,7 +144,7 @@ export const translations = {
     footer_title: "Llest per transformar el teu Centre Mèdic?",
     footer_btn: "Parlem avui",
     footer_rights: "Tots els drets reservats.",
-    seo_title: "Sintel IA Consulting | IA per a Centres Mèdics",
-    seo_desc: "Especialistes en automatització, xatbots i digitalització per a clíniques i centres de reconeixement mèdic. Capta leads 24/7."
+    seo_title: "Sintel IA | Automatització i IA per a Centres de Reconeixement DGT (CRC)",
+    seo_desc: "Automatitzem la cita prèvia, recordatoris i captació 24/7 per a Centres de Reconeixement de Conductors autoritzats per la DGT. Multiplica les teves renovacions."
   }
 };
