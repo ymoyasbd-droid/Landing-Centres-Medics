@@ -331,9 +331,23 @@ function App() {
                 <input type="email" id="email" name="email" className="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="contacto@clinicagomez.com" required />
               </div>
             </div>
-            <div className="space-y-2 text-left">
-              <label htmlFor="phone" className="text-sm font-medium text-muted">Teléfono</label>
-              <input type="tel" id="phone" name="phone" className="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="+34 600 000 000" />
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2 text-left">
+                <label htmlFor="phone" className="text-sm font-medium text-muted">Teléfono</label>
+                <input type="tel" id="phone" name="phone" className="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="+34 600 000 000" />
+              </div>
+              <div className="space-y-2 text-left">
+                <label htmlFor="service" className="text-sm font-medium text-muted">Servicio de interés</label>
+                <select id="service" name="service" defaultValue="" className="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" required>
+                  <option value="" disabled>Selecciona una opción...</option>
+                  <option value="Auditoría Gratuita">Auditoría Gratuita</option>
+                  <option value="Chatbot IA">Chatbot IA 24/7</option>
+                  <option value="Calculadora de Precios">Calculadora de Precios</option>
+                  <option value="Cita Automatizada">Cita Automatizada</option>
+                  <option value="Ecosistema Completo">Ecosistema Completo</option>
+                  <option value="Otro">Otro / Información General</option>
+                </select>
+              </div>
             </div>
             <div className="space-y-2 text-left">
               <label htmlFor="message" className="text-sm font-medium text-muted">¿En qué podemos ayudarte?</label>
