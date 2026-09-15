@@ -10,6 +10,29 @@ function App() {
   const [lang, setLang] = useState('ca');
   const t = translations[lang];
 
+  const [formStatus, setFormStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus('loading');
+    
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      await fetch("https://hook.eu2.make.com/ksh91tz8yt92lm9kq5bx9ygsfeh95bhk", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      setFormStatus('success');
+      e.target.reset(); // clear form
+    } catch (error) {
+      console.error("Error submitting form", error);
+      setFormStatus('error');
+    }
+  };
+
   useEffect(() => {
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver(
@@ -297,7 +320,7 @@ function App() {
             <h2 className="text-3xl font-bold mb-4">{t.footer_title || '¿Listo para transformar tu Centro Médico?'}</h2>
             <p className="text-muted">Déjanos tus datos y nos pondremos en contacto contigo para una auditoría gratuita.</p>
           </div>
-          <form className="space-y-6 max-w-2xl mx-auto" action="https://hook.eu2.make.com/ksh91tz8yt92lm9kq5bx9ygsfeh95bhk" method="POST">
+          <form className="space-y-6 max-w-2xl mx-auto" onSubmit={handleFormSubmit}>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2 text-left">
                 <label htmlFor="name" className="text-sm font-medium text-muted">Nombre completo</label>
@@ -316,8 +339,26 @@ function App() {
               <label htmlFor="message" className="text-sm font-medium text-muted">¿En qué podemos ayudarte?</label>
               <textarea id="message" name="message" rows="4" className="w-full bg-dark border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none" placeholder="Cuéntanos brevemente sobre tu centro médico..." required></textarea>
             </div>
-            <button type="submit" className="w-full py-4 rounded-xl bg-primary text-dark font-bold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
-              {t.footer_btn || 'Solicitar información'} <TrendingUp size={18} />
+            
+            {formStatus === 'success' && (
+              <div className="p-4 bg-green-500/10 border border-green-500/20 text-green-400 rounded-xl text-sm font-medium">
+                ¡Gracias! Hemos recibido tu solicitud. Nos pondremos en contacto contigo pronto.
+              </div>
+            )}
+            
+            {formStatus === 'error' && (
+              <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 rounded-xl text-sm font-medium">
+                Ha ocurrido un error al enviar el formulario. Por favor, inténtalo de nuevo.
+              </div>
+            )}
+
+            <button 
+              type="submit" 
+              disabled={formStatus === 'loading'}
+              className="w-full py-4 rounded-xl bg-primary text-dark font-bold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {formStatus === 'loading' ? 'Enviando...' : (t.footer_btn || 'Solicitar información')} 
+              {formStatus !== 'loading' && <TrendingUp size={18} />}
             </button>
           </form>
         </div>
