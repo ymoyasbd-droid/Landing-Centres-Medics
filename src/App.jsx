@@ -98,9 +98,9 @@ function App() {
         </h1>
         <p className="text-xl text-muted mb-10 max-w-2xl mx-auto">{t.hero_desc}</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="px-8 py-3.5 rounded-full bg-primary text-dark font-semibold hover:bg-primary/90 transition-colors w-full sm:w-auto shadow-[0_0_20px_rgba(26,224,197,0.3)]">
+          <a href="#contacto" className="inline-block px-8 py-3.5 rounded-full bg-primary text-dark font-semibold hover:bg-primary/90 transition-colors w-full sm:w-auto shadow-[0_0_20px_rgba(26,224,197,0.3)] text-center">
             {t.hero_btn_1}
-          </button>
+          </a>
           <a href="#casos-de-exito" className="inline-block px-8 py-3.5 rounded-full bg-card-dark border border-white/10 hover:border-white/30 font-medium transition-colors w-full sm:w-auto text-center">
             {t.hero_btn_2}
           </a>
@@ -291,7 +291,7 @@ function App() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="container mx-auto px-6 py-24 max-w-4xl">
+      <section id="contacto" className="container mx-auto px-6 py-24 max-w-4xl">
         <div className="bg-card-dark border border-white/5 rounded-3xl p-8 md:p-12 shadow-2xl">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">{t.footer_title || '¿Listo para transformar tu Centro Médico?'}</h2>
