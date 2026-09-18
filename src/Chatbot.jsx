@@ -44,21 +44,21 @@ export default function Chatbot() {
 
       if (data.lead) {
         const leadData = data.lead;
-        const formPayload = new FormData();
-        formPayload.append("nombre", leadData.nombre || "No especificado");
-        formPayload.append("email", leadData.email || "No especificado");
-        formPayload.append("telefono", leadData.telefono || "No especificado");
-        formPayload.append("_subject", "¡Nuevo Lead desde el Chatbot de Sintel IA!");
         
-        const autoReply = `Hola ${leadData.nombre || ''},\n\nGracias por contactar con Sintel IA Consulting. Te confirmamos que hemos recibido tu petición de información correctamente.\n\nNuestro equipo revisará tus datos y nos pondremos en contacto contigo lo antes posible para ayudarte a digitalizar tu clínica.\n\nUn saludo cordial,\nEl equipo de Sintel IA.\n📞 614 056 307\n✉️ ymoyasbd@gmail.com`;
-        formPayload.append("_autoresponse", autoReply);
+        const payload = {
+          name: leadData.nombre || "No especificado",
+          email: leadData.email || "No especificado",
+          phone: leadData.telefono || "No especificado",
+          service: "Lead Captado vía Chatbot (Sintel IA)",
+          message: "Este lead ha sido capturado automáticamente y pre-cualificado por el asistente virtual en la web."
+        };
 
-        fetch("https://formsubmit.co/ajax/ymoyasbd@gmail.com", {
+        fetch("https://hook.eu2.make.com/ksh91tz8yt92lm9kq5bx9ygsfeh95bhk", {
           method: "POST",
-          body: formPayload
-        }).then(res => res.json())
-          .then(data => console.log("Lead enviado por email", data))
-          .catch(err => console.error("Error enviando email", err));
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        }).then(res => console.log("Lead enviado a Make vía Chatbot", res))
+          .catch(err => console.error("Error enviando webhook desde chatbot", err));
       }
 
     } catch (error) {
@@ -72,18 +72,12 @@ export default function Chatbot() {
 
   return (
     <>
-      <form name="leads-chatbot" data-netlify="true" hidden>
-        <input type="text" name="nombre" />
-        <input type="email" name="email" />
-        <input type="tel" name="telefono" />
-      </form>
-
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
         {isOpen && (
           <div className="bg-card-dark border border-white/10 rounded-2xl shadow-2xl w-[350px] max-w-[calc(100vw-3rem)] h-[500px] max-h-[80vh] flex flex-col mb-4 overflow-hidden animate-in slide-in-from-bottom-5">
             <div className="bg-dark p-4 border-b border-white/5 flex justify-between items-center">
-              <div className="flex/items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-primary/20 flex/items-center justify-center text-primary">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
                   <Bot size={18} />
                 </div>
                 <div>
@@ -94,7 +88,7 @@ export default function Chatbot() {
                   </span>
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="text-muted hoverL:text-white transition-colors">
+              <button onClick={() => setIsOpen(false)} className="text-muted hover:text-white transition-colors">
                 <X size={20} />
               </button>
             </div>
@@ -137,7 +131,7 @@ export default function Chatbot() {
               <button 
                 type="submit" 
                 disabled={!input.trim() || isLoading}
-                className="w-10 h-10 rounded-full bg-primary flex/items-center justify-center text-dark disabled:opacity-50 disabled:cursor-not-allowed hover:bg-primary/90 transition-colors shrink-0"
+                className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-dark disabled:opacity-50 disabled:cursor-not-allowed hover:bg-primary/90 transition-colors shrink-0"
               >
                 <Send size={16} className="ml-0.5" />
               </button>
@@ -147,7 +141,7 @@ export default function Chatbot() {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 rounded-full bg-primary text-dark shadow-[0_0_20px_rgba(26,224,197,0.4)] flex/items-center justify-center hover:scale-105 transition-transform"
+          className="w-14 h-14 rounded-full bg-primary text-dark shadow-[0_0_20px_rgba(26,224,197,0.4)] flex items-center justify-center hover:scale-105 transition-transform"
         >
           {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
         </button>
