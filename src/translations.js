@@ -70,6 +70,15 @@ export const translations = {
     footer_title: "¿Listo para transformar tu Centro Médico?",
     footer_btn: "Hablemos hoy",
     footer_rights: "Todos los derechos reservados.",
+    faq_tag: "Preguntas Frecuentes",
+    faq_title: "Resolvemos tus dudas",
+    faq_desc: "Todo lo que necesitas saber antes de implementar Sintel IA en tu centro.",
+    faq_items: [
+      { q: "¿Necesito conocimientos técnicos para usarlo?", a: "Absolutamente ninguno. Nosotros nos encargamos de toda la configuración, integración con tu software actual y puesta en marcha." },
+      { q: "¿Cumple con la normativa de protección de datos (LOPD/RGPD)?", a: "Sí, todos nuestros sistemas están diseñados con encriptación de extremo a extremo y cumplen estrictamente con la normativa europea de protección de datos de salud." },
+      { q: "¿Tengo que cambiar mi programa de citas actual?", a: "No. Nuestra IA se integra con la mayoría de calendarios y programas de gestión de clínicas del mercado (Google Calendar, Clinic Cloud, etc.)." },
+      { q: "¿Cuánto tiempo tarda en estar funcionando?", a: "El despliegue de la Fase Piloto suele estar listo y operativo en tu web o WhatsApp en un plazo de 4 a 6 semanas." }
+    ],
     seo_title: "Sintel IA | Automatización e IA para Centros de Reconocimiento DGT (CRC)",
     seo_desc: "Automatizamos la cita previa, recordatorios y captación 24/7 para Centros de Reconocimiento de Conductores autorizados por la DGT. Multiplica tus renovaciones."
   },
@@ -144,6 +153,15 @@ export const translations = {
     footer_title: "Llest per transformar el teu Centre Mèdic?",
     footer_btn: "Parlem avui",
     footer_rights: "Tots els drets reservats.",
+    faq_tag: "Preguntes Freqüents",
+    faq_title: "Resolem els teus dubtes",
+    faq_desc: "Tot el que necessites saber abans d'implementar Sintel IA al teu centre.",
+    faq_items: [
+      { q: "Necessito coneixements tècnics per utilitzar-ho?", a: "Absolutament cap. Nosaltres ens encarreguem de tota la configuració, integració amb el teu programari actual i posada en marxa." },
+      { q: "Compleix amb la normativa de protecció de dades (LOPD/RGPD)?", a: "Sí, tots els nostres sistemes estan dissenyats amb encriptació d'extrem a extrem i compleixen estrictament amb la normativa europea de protecció de dades de salut." },
+      { q: "He de canviar el meu programa de cites actual?", a: "No. La nostra IA s'integra amb la majoria de calendaris i programes de gestió de clíniques del mercat (Google Calendar, Clinic Cloud, etc.)." },
+      { q: "Quant de temps triga a estar funcionant?", a: "El desplegament de la Fase Pilot sol estar llest i operatiu a la teva web o WhatsApp en un termini de 4 a 6 setmanes." }
+    ],
     seo_title: "Sintel IA | Automatització i IA per a Centres de Reconeixement DGT (CRC)",
     seo_desc: "Automatitzem la cita prèvia, recordatoris i captació 24/7 per a Centres de Reconeixement de Conductors autoritzats per la DGT. Multiplica les teves renovacions."
   }

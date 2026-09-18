@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { 
   Bot, Calculator, CalendarCheck, TrendingUp, Bell, Target, Settings, Zap, BarChart, Headset,
-  EyeOff, PhoneOff, Hourglass, ChevronRight, CheckCircle2, Globe, Star
+  EyeOff, PhoneOff, Hourglass, ChevronRight, CheckCircle2, Globe, Star, ChevronDown, MessageCircle
 } from 'lucide-react';
 import Chatbot from './Chatbot';
 import { translations } from './translations';
@@ -9,6 +9,19 @@ import { translations } from './translations';
 function App() {
   const [lang, setLang] = useState('ca');
   const t = translations[lang];
+
+  const [showCookies, setShowCookies] = useState(false);
+  
+  useEffect(() => {
+    if (!localStorage.getItem('cookiesAccepted')) {
+      setShowCookies(true);
+    }
+  }, []);
+
+  const acceptCookies = () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    setShowCookies(false);
+  };
 
   const [formStatus, setFormStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
 
@@ -131,6 +144,19 @@ function App() {
         <div className="mt-20 relative max-w-5xl mx-auto">
            <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full"></div>
            <img src="/hero.jpg" alt="Sintel IA Dashboard" className="relative rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] w-full object-cover" />
+        </div>
+      </section>
+
+      {/* Integrations Banner */}
+      <section className="border-y border-white/5 bg-dark/50 overflow-hidden">
+        <div className="container mx-auto px-6 py-6">
+          <p className="text-center text-xs font-bold tracking-widest text-muted uppercase mb-6">Integración perfecta con tus herramientas actuales</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+            <div className="flex items-center gap-2 font-semibold text-lg"><MessageCircle size={24} className="text-[#25D366]" /> WhatsApp</div>
+            <div className="flex items-center gap-2 font-semibold text-lg"><CalendarCheck size={24} className="text-[#4285F4]" /> Google Calendar</div>
+            <div className="flex items-center gap-2 font-semibold text-lg"><Globe size={24} className="text-white" /> Clinic Cloud</div>
+            <div className="flex items-center gap-2 font-semibold text-lg"><Settings size={24} className="text-[#8e24aa]" /> Make (Integromat)</div>
+          </div>
         </div>
       </section>
 
@@ -313,6 +339,27 @@ function App() {
         </div>
       </section>
 
+      <section className="reveal container mx-auto px-6 py-12 md:py-16">
+        <div className="text-center mb-16">
+          <h2 className="text-primary font-medium mb-2">7. {t.faq_tag}</h2>
+          <h3 className="text-3xl md:text-4xl font-bold">{t.faq_title}</h3>
+          <p className="text-muted mt-4 max-w-2xl mx-auto">{t.faq_desc}</p>
+        </div>
+        <div className="max-w-3xl mx-auto space-y-4">
+          {t.faq_items.map((faq, i) => (
+            <details key={i} className="group bg-card-dark border border-white/5 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex items-center justify-between p-6 cursor-pointer font-semibold hover:text-primary transition-colors">
+                {faq.q}
+                <ChevronDown size={20} className="text-muted group-open:rotate-180 transition-transform duration-300" />
+              </summary>
+              <div className="p-6 pt-0 text-muted leading-relaxed">
+                {faq.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
       {/* Contact Form Section */}
       <section id="contacto" className="container mx-auto px-6 py-24 max-w-4xl">
         <div className="bg-card-dark border border-white/5 rounded-3xl p-8 md:p-12 shadow-2xl">
@@ -403,6 +450,23 @@ function App() {
           </div>
         </div>
       </footer>
+      {/* Cookie Banner */}
+      {showCookies && (
+        <div className="fixed bottom-0 left-0 right-0 p-4 z-50 animate-in slide-in-from-bottom-10 fade-in duration-500">
+          <div className="container mx-auto max-w-4xl bg-card-dark/95 backdrop-blur-md border border-white/10 p-6 rounded-2xl shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-sm text-muted">
+              <strong className="text-white block mb-1">Privacidad y Cookies</strong>
+              Utilizamos cookies propias y de terceros para mejorar tu experiencia, analizar el tráfico y optimizar nuestros servicios. 
+            </div>
+            <div className="flex gap-3 shrink-0">
+              <button onClick={acceptCookies} className="px-6 py-2.5 bg-primary text-dark font-bold rounded-xl hover:bg-primary/90 transition-colors whitespace-nowrap">
+                Aceptar todas
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Chatbot />
     </div>
   );
