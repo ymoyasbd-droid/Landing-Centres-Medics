@@ -4,6 +4,7 @@ import {
   EyeOff, PhoneOff, Hourglass, ChevronRight, CheckCircle2, Globe, Star, ChevronDown, MessageCircle
 } from 'lucide-react';
 import Chatbot from './Chatbot';
+import ROICalculator from './ROICalculator';
 import { translations } from './translations';
 
 function App() {
@@ -199,6 +200,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      <ROICalculator t={t} />
 
       <section className="reveal container mx-auto px-6 py-12 md:py-16">
          <div className="text-center mb-16">
